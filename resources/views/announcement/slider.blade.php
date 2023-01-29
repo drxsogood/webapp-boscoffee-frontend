@@ -16,16 +16,18 @@
         @endif
 
         <div class="">
-    <h3 class="text-center text-2xl font-bold">Slider List</h3>
+    <h3 class="text-center text-2xl font-bold text-orange-50">Announcement List</h3>
 </div>
 {{-- <div class="flex items-center justify-center my-8">
     <a href="{{ url('/sliders/create')}}" class="bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-4 rounded-lg">
         Add Slider
     </a>
 </div> --}}
-    <div class="flex items-center justify-center my-8">
+    <div class="p-6 text-gray-900 dark:text-gray-100">
         <a href="{{ url('/sliders/create') }}">
-            <button type="button" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Add Slider +</button>
+            <button class=" float-right bg-amber-500 hover:bg-amber-700 text-white font-bold py-1 px-2 border border-amber-500 rounded">     
+                       Add Announcement
+            </button>
         </a>
     </div>
 
@@ -33,33 +35,33 @@
                     {{-- <table class="table-auto w-full text-center"> --}}
                     <table class="min-w-full border-collapse block md:table">
                         <thead class="block md:table-header-group">
-                            <tr class="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
+                            <tr class="border border-black-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
                             <!-- <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">ID</th> -->
                             {{-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Title</th> --}}
-                            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Description</th>
+                            <th class="text-center bg-stone-600 p-2 text-white font-bold md:border md:border-stone-500 text-left block md:table-cell">Description</th>
                             {{-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Image</th> --}}
                             <!-- <th class = "border-solid border-2 border-light-blue-500 p-1 bg-red-300">Status</th> -->
-                            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-center block md:table-cell">Action</th>
+                            <th class="bg-stone-600 p-2 text-white font-bold md:border md:border-stone-500 text-center block md:table-cell">Action</th>
                             </tr>
                             </thead>
                             <tbody class="block md:table-row-group">
                         @foreach ($sliders as $slider)
-                        <tr class="bg-gray-300 border border-grey-500 md:border-none block md:table-row">
+                        <tr class="bg-white border border-zinc-500 md:border-none block md:table-row">
                         {{-- <!-- <td class="p-1">{{$slider->id}}</td> --> --}}
                             {{-- <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">{{$slider->title}}</td> --}}
-                            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">{{$slider->description}}</td>
+                            <td class="p-2 md:border md:border-zinc-700 text-left block md:table-cell">{{$slider->description}}</td>
                             {{-- <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                             <img src="{{ asset($slider->image)}}" class="h-32 w-full object-cover" alt="Slider">
                             </td> --}}
                             {{-- <!-- <td class="p-1">{{$slider->status == '0' ? 'Visible':'Hidden' }}</td> --> --}}
-                            <td class="p-2 md:border md:border-grey-500 text-center block md:table-cell">
+                            <td class="p-2 md:border md:border-zinc-700 text-center block md:table-cell">
                             {{-- <a href = "{{ url('/sliders/'.$slider->id.'/edit')}}" class = "btn btn-success bg-green-500 text-white">Edit</a>
                             <a href = "{{ url('/sliders/'.$slider->id.'/delete')}}" 
                             onclick="return confirm('Are you sure you want to delete this Slider?');"
                             class = "btn btn-danger bg-red-500 text-white">Delete</a> --}}
                             
                             <a href="{{ url('/sliders/'.$slider->id.'/edit')}}">
-                                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Update</button>
+                                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">Update</button>
                                         </a>
                             <a href="{{ url('/sliders/'.$slider->id.'/delete')}}" onclick="return confirm('Are you sure you want to delete this Slider?');">
                                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Delete</button>

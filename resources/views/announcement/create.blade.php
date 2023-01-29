@@ -17,8 +17,8 @@
 
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white bg-gray-500 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white bg-stone-500 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-stone-900 dark:text-stone-100">
                     <form method="POST" action="{{ url('/sliders/create') }}" enctype = "multipart/form-data">
                         @csrf
 
@@ -27,7 +27,7 @@
                             <input type = "text" name = "title" class = "block mt-1 w-full text-black" placeholder="Input message..." required>
                         </div> --}}
                         <div class = "mb-4">
-                            <label class="font-bold">Description</label>
+                            <label class="text-purple-50 font-bold">Description</label>
                             <textarea name = "description" class = "block mt-1 w-full text-black" rows = "3" placeholder="Input description..." required></textarea>
                         </div>
                         {{-- <div class = "mb-4">
@@ -43,7 +43,7 @@
                             {{-- <button type = "Submit"  class = "block mt-1 w-full">Submit</button> --}}
 
                             {{-- <a href="{{ url('/users/update/' . $user->id) }}"> --}}
-                            <button type="Submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Submit</button>
+                            <button type="Submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">Submit</button>
                             {{-- </a> --}}
                         </div>
                 </div>

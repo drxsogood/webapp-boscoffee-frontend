@@ -20,6 +20,7 @@ class SliderController extends Controller
     public function create ()
     {
         return view ('announcement.create');
+        
     }
 
     public function store (SliderFormRequest $request)
@@ -48,6 +49,7 @@ class SliderController extends Controller
     public function edit(Slider $slider)
     {
         return view('announcement.edit', compact('slider'));
+        
     }
 
     public function update(SliderFormRequest $request, Slider $slider)
@@ -67,6 +69,7 @@ class SliderController extends Controller
             $filename = time () .'.'. $ext;
             $file->move('uploads/slider/', $filename);
             $validatedData['image'] ="uploads/slider/$filename";
+            
         }
 
         $validatedData['status'] = $request->gc_status == true ? '1':'0';
