@@ -5,9 +5,11 @@
             Announcement
         </div>
         <ul>
-              <li>
-              We all want to celebrate our happiness and share our memories.
-              </li>
+              @foreach($sliders as $SliderItem)
+                        <li>
+                        {{$SliderItem->description}}
+                        </li>
+                @endforeach
         </ul>
     </div>
 

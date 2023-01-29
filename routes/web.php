@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\SliderController;
+use App\Models\Slider;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('homepage');
+    $sliders = Slider::all();
+    return view('homepage',['sliders' => $sliders]);
 });
 
 Route::get('/dashboard', function () {
@@ -28,6 +31,10 @@ Route::get('/dashboard', function () {
 Route::get('/users', [UserController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('users');
+
+Route::get('/announcement', [UserController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('announcement');
 
     
 Route::get('/users/add', [UserController::class, 'form'])
@@ -54,6 +61,25 @@ Route::post('/users/update-password/{id}', [UserController::class, 'updatePasswo
 Route::delete('/users/delete-user/{id}', [UserController::class, 'destroy'])
         ->middleware(['auth', 'verified']);
 
+Route::get('/sliders', [SliderController::class, 'index'])
+        ->middleware(['auth', 'verified'])
+        ->name('sliders');
+Route::get('/sliders/create', [SliderController::class, 'create'])
+        ->middleware(['auth', 'verified'])
+        ->name('create');    
+Route::post('/sliders/create', [SliderController::class, 'store'])
+        ->middleware(['auth', 'verified'])
+        ->name('create');
+Route::get('/sliders/{slider}/edit', [SliderController::class, 'edit'])
+        ->middleware(['auth', 'verified'])
+        ->name('edit');
+Route::put('/sliders/{slider}', [SliderController::class, 'update'])
+        ->middleware(['auth', 'verified'])
+        ->name('update');
+Route::get('/sliders/{slider}/delete', [SliderController::class, 'destroy'])
+        ->middleware(['auth', 'verified'])
+        ->name('destroy');
+    
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
