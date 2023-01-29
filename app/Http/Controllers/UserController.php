@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -24,6 +25,27 @@ class UserController extends Controller
             'header' => 'Add Users',
 
         ]);
+    }
+
+    public function passwordForm($id)
+    {
+        $user = User::find($id);
+        return view('users.form_password', [
+            'header' => 'Change Password',
+            'user'      => $user
+        ]);
+    }
+
+    public function changePassword(Request $request, $id)
+    {
+        
+        DB::table('users')->where('id', $request->id)->update([
+            'password' => Hash::make($request->password)
+        ]);
+
+        session()->flash('status', 'Password Updated Successfully!');
+
+        return redirect('/users');
     }
 
 
@@ -76,6 +98,14 @@ class UserController extends Controller
         session()->flash('status', 'Updated User Successfully!');
 
         return redirect('/users/update/' . $user->id);
+    }
+
+    public function destroy(Request $request, $id){
+        
+        $user = User::find($id);
+        $user->delete($request->all());
+        session()->flash('status', 'Data Successfully Deleted!');
+        return redirect('/users');
     }
 
     

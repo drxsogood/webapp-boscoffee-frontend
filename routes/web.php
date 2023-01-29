@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('homepage');
 });
@@ -33,12 +35,26 @@ Route::get('/users/add', [UserController::class, 'form'])
 Route::post('/users/add', [UserController::class, 'store'])
     ->middleware(['auth', 'verified']);
 
+Route::get('/users/form_password/{id}', [UserController::class, 'passwordForm'])
+    ->middleware(['auth', 'verified']);
+
+Route::post('/users/change-password/{id}', [UserController::class, 'changePassword'])
+    ->middleware(['auth', 'verified']);
+
 Route::get('/users/update/{id}', [UserController::class, 'show'])
         ->middleware(['auth', 'verified']);
 Route::post('/users/update/{id}', [UserController::class, 'update'])
         ->middleware(['auth', 'verified']);
 
-  
+Route::get('/users/update-password/{id}', [UserController::class, 'show'])
+        ->middleware(['auth', 'verified']);
+Route::post('/users/update-password/{id}', [UserController::class, 'updatePassword'])
+        ->middleware(['auth', 'verified']);
+
+Route::delete('/users/delete-user/{id}', [UserController::class, 'destroy'])
+        ->middleware(['auth', 'verified']);
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

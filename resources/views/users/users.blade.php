@@ -53,11 +53,17 @@
                             <a href="{{ url('/users/update/' . $user->id) }}">
                                  <button class="rounded-full bg-amber-500 p-1 hover:bg-amber-700">Update</button>
                             </a>
-                             <a href="{{ url('/users/password/' . $user->id) }}">
+                            {{-- <a href="{{ url('/users/form_password') }}"> --}}
+                             <a href="{{ url('/users/form_password/' . $user->id) }}">
                                   <button class="rounded-full bg-amber-500 p-1 hover:bg-amber-700">Password</button>
                             </a>
-                            <a href="{{ url('/users/delete/' . $user->id) }}">
-                                 <button class="rounded-full bg-amber-500 p-1 hover:bg-amber-700">Delete</button>
+
+                            
+                            <form action="{{ url('/users/delete-user/' . $user->id) }}" method="POST"> 
+                            @csrf
+                            @method('delete')
+                            <button class="rounded-full bg-amber-500 p-1 hover:bg-amber-700">Delete</button>
+                            </form> 
                              </a>
                             </td>
 
