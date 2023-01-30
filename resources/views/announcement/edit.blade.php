@@ -20,27 +20,11 @@
                     <form method="POST" action="{{ url('/sliders/'.$slider->id) }}" enctype = "multipart/form-data">
                         @csrf
                         @method('PUT')
-{{-- 
-                        <div class = "mb-4">
-                            <label class="font-bold">Title</label>
-                            <input type = "text" name = "title" value = "{{$slider->title}}" class = "block mt-1 w-full text-black">
-                        </div> --}}
                         <div class = "mb-4"> 
                             <label class="font-bold">Description</label>
                             <textarea class = "block mt-1 w-full text-black" name = "description" rows = "3">{{$slider->description}}</textarea>
                         </div>
-                        {{-- <div class = "mb-4">
-                            <label class="font-bold">Image</label>
-                            <input type = "file" name="image" class = "block mt-1 ">
-                            <img src="{{ asset($slider->image) }}" class="h-32 w-full object-cover" alt="Slider">
-                        </div> --}}
-                        {{-- <div class = "mb-3">
-                            <label>Status</label>
-                            <input type = "checkbox" name = "status" {{$slider->status == '1' ? 'Checked':'' }} class = "block mt-1">
-                            Check = hidden, Unchecked = Visible
-                        </div> --}}
                         <div class = "mb-4 text-center">
-                            {{-- <button type = "Submit"  class = "block mt-1 w-full">Update</button> --}}
                             <button type="Submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">Update</button>
                         </div>
                 </div>

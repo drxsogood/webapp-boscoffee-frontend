@@ -21,30 +21,12 @@
                 <div class="p-6 text-stone-900 dark:text-stone-100">
                     <form method="POST" action="{{ url('/sliders/create') }}" enctype = "multipart/form-data">
                         @csrf
-
-                        {{-- <div class = "mb-4">
-                            <label class="font-bold">Title</label>
-                            <input type = "text" name = "title" class = "block mt-1 w-full text-black" placeholder="Input message..." required>
-                        </div> --}}
                         <div class = "mb-4">
                             <label class="text-purple-50 font-bold">Description</label>
                             <textarea name = "description" class = "block mt-1 w-full text-black" rows = "3" placeholder="Input description..." required></textarea>
                         </div>
-                        {{-- <div class = "mb-4">
-                            <label class="font-bold">Image</label>
-                            <input type = "file" name="image" class = "block mt-1">
-                        </div> --}}
-                        {{-- <div class = "mb-3">
-                            <label>Status</label>
-                            <input type = "checkbox" name = "status" class = "block mt-1">
-                            Check = hidden, Unchecked = Visible
-                        </div> --}}
                         <div class = "mb-4 text-center">
-                            {{-- <button type = "Submit"  class = "block mt-1 w-full">Submit</button> --}}
-
-                            {{-- <a href="{{ url('/users/update/' . $user->id) }}"> --}}
                             <button type="Submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">Submit</button>
-                            {{-- </a> --}}
                         </div>
                 </div>
             </div>

@@ -47,19 +47,8 @@
                             <tbody class="block md:table-row-group">
                         @foreach ($sliders as $slider)
                         <tr class="bg-white border border-zinc-500 md:border-none block md:table-row">
-                        {{-- <!-- <td class="p-1">{{$slider->id}}</td> --> --}}
-                            {{-- <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">{{$slider->title}}</td> --}}
                             <td class="p-2 md:border md:border-zinc-700 text-left block md:table-cell">{{$slider->description}}</td>
-                            {{-- <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                            <img src="{{ asset($slider->image)}}" class="h-32 w-full object-cover" alt="Slider">
-                            </td> --}}
-                            {{-- <!-- <td class="p-1">{{$slider->status == '0' ? 'Visible':'Hidden' }}</td> --> --}}
                             <td class="p-2 md:border md:border-zinc-700 text-center block md:table-cell">
-                            {{-- <a href = "{{ url('/sliders/'.$slider->id.'/edit')}}" class = "btn btn-success bg-green-500 text-white">Edit</a>
-                            <a href = "{{ url('/sliders/'.$slider->id.'/delete')}}" 
-                            onclick="return confirm('Are you sure you want to delete this Slider?');"
-                            class = "btn btn-danger bg-red-500 text-white">Delete</a> --}}
-                            
                             <a href="{{ url('/sliders/'.$slider->id.'/edit')}}">
                                         <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">Update</button>
                                         </a>
