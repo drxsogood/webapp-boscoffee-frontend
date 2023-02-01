@@ -58,13 +58,13 @@
                                   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-stone-900 rounded">Password</button>
                             </a>
 
-                            
-                            <form class="float-none" action="{{ url('/users/delete-user/' . $user->id) }}" method="POST"> 
+                            <a>
+                            <form class="float-right" action="{{ url('/users/delete-user/' . $user->id) }}" method="POST"> 
                             @csrf
                             @method('delete')
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Delete</button>
                             </form> 
-                            </td>
+                            </a>
 
                         
                         </tr>
