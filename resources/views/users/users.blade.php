@@ -51,18 +51,18 @@
                             <td class="text-center">
 
                             <a href="{{ url('/users/update/' . $user->id) }}">
-                                 <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-1 px-2 border border-stone-900 rounded">Update</button>
+                                 <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded">Update</button>
                             </a>
                             {{-- < href="{{ url('/users/form_password') }}"> --}}
                              <a href="{{ url('/users/form_password/' . $user->id) }}">
-                                  <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-1 px-2 border border-stone-900 rounded">Password</button>
+                                  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-stone-900 rounded">Password</button>
                             </a>
 
                             
                             <form class="float-none" action="{{ url('/users/delete-user/' . $user->id) }}" method="POST"> 
                             @csrf
                             @method('delete')
-                            <button class="bg-amber-500 hover:bg-amber-700 text-white font-bold py-1 px-2 border border-stone-900 rounded">Delete</button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Delete</button>
                             </form> 
                             </td>
 

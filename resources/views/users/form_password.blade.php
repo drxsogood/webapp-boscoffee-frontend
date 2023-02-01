@@ -28,27 +28,6 @@
                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
                         </div>
 
-                        {{-- <!-- Email Address -->
-                        <div class="mt-4">
-                            <x-input-label for="email" :value="__('Email')" />
-                            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="( url()->current() == url('/users/add') ) ? old('email'):$user->email" required />
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                        </div>
-
-                        @if( url()->current() == url('/users/add') ) 
-                            <!-- Password -->
-                            <div class="mt-4">
-                                <x-input-label for="password" :value="__('Password')" />
-
-                                <x-text-input id="password" class="block mt-1 w-full"
-                                                type="text"
-                                                name="password"
-                                                autocomplete="new-password" />
-
-                                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-                            </div>
-                        @endif --}}
-
                         <div class="flex items-center justify-end mt-4">
                             <x-primary-button class="ml-4">
                                 {{ $header }}
