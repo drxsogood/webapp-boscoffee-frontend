@@ -60,6 +60,7 @@ Route::post('/users/update-password/{id}', [UserController::class, 'updatePasswo
 
 Route::delete('/users/delete-user/{id}', [UserController::class, 'destroy'])
         ->middleware(['auth', 'verified']);
+        
 
 Route::get('/sliders', [SliderController::class, 'index'])
         ->middleware(['auth', 'verified'])

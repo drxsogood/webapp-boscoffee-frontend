@@ -23,7 +23,7 @@
     display: inline-flex;
     list-style: none;
     margin: 0;
-    animation: scroll 25s infinite linear;
+    animation: scroll 10s infinite linear;
 }
 
 .news-container ul li {
@@ -51,7 +51,7 @@
 
 @keyframes scroll {
     from {
-        transform: translateX(165%);
+        transform: translateX(300%);
     }
 
     to {
